@@ -16,4 +16,7 @@ else
 document.getElementById('addtionOfPromt').innerHTML = 'You are ' +age+ ' years old.';
 
 // functions
- 
+function func(){
+    alert('this is a function');
+}
+ func();
