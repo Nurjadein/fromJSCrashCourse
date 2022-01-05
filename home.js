@@ -16,18 +16,12 @@ else
 document.getElementById('addtionOfPromt').innerHTML = 'You are ' +age+ ' years old.';
 
 // functions
-
-// function func(){
-//     alert('this is a function');
-// }
-//  func();
-
  function add(num1,num2){
     console.log(num1+num2);
  }
  add(1,2);
 
-//  Strings
+//  Strings common methods
 let sample = 'HoneyBee';
 let sample2 = 'HoneyBee,LemonJuice,appleJuice';
 console.log(sample.length);
@@ -41,3 +35,31 @@ console.log(sample[4]);
 console.log(sample2.split('')); //by character
 console.log(sample2.split(',')); //by symbol(comma)
 
+// Arrays
+let fruits = ['Avocado', 'Mango', 'Watermelon', 'Banana'];
+let veggies = ['Broccoli','Okra','Baguio Beans'];
+let someNumbers = [6,3,2,9,7];
+console.log(fruits);
+console.log(fruits[0]);
+fruits[0] = 'Apple';
+console.log(fruits);
+
+for (let i=0;i<fruits.length;i++){
+   console.log([fruits[i]]);
+}
+
+// Array common methods
+console.log('toString --> ', fruits.toString());
+console.log('join --> ', fruits.join(' -> '));
+console.log('pop --> ', fruits.pop(),' ',fruits);
+console.log('push --> ', fruits.push('papaya'),' ',fruits);
+console.log('shift --> ', fruits.shift(),' ',fruits); // remove first element
+console.log('unshift --> ', fruits.unshift('Avocado'),' ',fruits); // add first element
+let veggiesFruitsComb = fruits.concat(veggies);
+console.log(veggiesFruitsComb);
+console.log(veggiesFruitsComb.slice(1,5));
+console.log(veggiesFruitsComb.reverse());
+console.log(veggiesFruitsComb.sort());
+console.log(someNumbers.sort()); //sort to ascending order by default
+console.log(someNumbers.sort(function(a,b){return a-b})); //sort to ascending order
+console.log(someNumbers.sort(function(a,b){return b-a})); //sort to descending order
