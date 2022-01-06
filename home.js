@@ -63,3 +63,22 @@ console.log(veggiesFruitsComb.sort());
 console.log(someNumbers.sort()); //sort to ascending order by default
 console.log(someNumbers.sort(function(a,b){return a-b})); //sort to ascending order
 console.log(someNumbers.sort(function(a,b){return b-a})); //sort to descending order
+
+
+// Objects
+
+ let user = {
+     username:'username',
+     password:'password',
+     age:30,
+     userInfo: function(){
+         return `username: ${this.username} \n password: ${this.password} \n age: ${this.age}`
+     },
+};
+ console.log(user.username);
+ user.username = 'username2';
+ console.log(user.username);
+ console.log(user.age);
+ user.age++;
+ console.log(user.age);
+ console.log (user.userInfo());
