@@ -14,3 +14,12 @@ function ageInDays(){
 function reset(){
     document.getElementById('ageInDays').remove()
 }
+
+// Project 2
+
+function generateImage(){
+    var image = document.createElement('img');
+    var div = document.getElementById('imageID');
+    image.src = "static/img/Pinwheel.gif";
+    div.append(image);
+}
