@@ -1,4 +1,4 @@
-// Project 1: Your Age in days 
+// Project 1: Your Age in days
 
 function ageInDays() {
   var birthYear = prompt("What year were you born?");
@@ -83,12 +83,77 @@ function rpsFrontEnd(yourImagechoice, botImageChoice, finalMessage) {
   var botDiv = document.createElement("div");
   var messageDiv = document.createElement("div");
 
-  yourDiv.innerHTML = "<img src='" + imageDatabase[yourImagechoice] + "' height=150 width=150 style='box-shadow: 0px 10px 50px rgba(37,50,233,1)' />";
-  botDiv.innerHTML = "<img src='" + imageDatabase[botImageChoice] + "' height=150 width=150 style='box-shadow: 0px 10px 50px rgba(243,38,24,1)' />";
-  messageDiv.innerHTML = "<h1 style='color: " + finalMessage['color'] + ";font-size:60px;padding:30px;'>" + finalMessage['message'] + "</h1>";
+  yourDiv.innerHTML =
+    "<img src='" +
+    imageDatabase[yourImagechoice] +
+    "' height=150 width=150 style='box-shadow: 0px 10px 50px rgba(37,50,233,1)' />";
+  botDiv.innerHTML =
+    "<img src='" +
+    imageDatabase[botImageChoice] +
+    "' height=150 width=150 style='box-shadow: 0px 10px 50px rgba(243,38,24,1)' />";
+  messageDiv.innerHTML =
+    "<h1 style='color: " +
+    finalMessage["color"] +
+    ";font-size:60px;padding:30px;'>" +
+    finalMessage["message"] +
+    "</h1>";
 
-  document.getElementById('flex-box-rps-div').appendChild(yourDiv);
-  document.getElementById('flex-box-rps-div').appendChild(messageDiv);
-  document.getElementById('flex-box-rps-div').appendChild(botDiv);
-  
+  document.getElementById("flex-box-rps-div").appendChild(yourDiv);
+  document.getElementById("flex-box-rps-div").appendChild(messageDiv);
+  document.getElementById("flex-box-rps-div").appendChild(botDiv);
 }
+
+// Project 4: Change the color of all Buttons
+
+let allButtons = document.getElementsByTagName("button"); //returns an array
+let copyAllButtons = [];
+
+for (let i = 0; i < allButtons.length; i++) {
+  copyAllButtons.push(allButtons[i].classList[1]);// will push the second class of the button
+}
+
+function buttonColorChange(buttonThingy) {
+  if(buttonThingy.value === 'red')
+    buttonRed();
+  else if (buttonThingy.value === 'green')
+    buttonGreen();
+  else if(buttonThingy.value === 'reset')
+    buttonColorReset();
+  else if (buttonThingy.value === 'random')
+    randomColor();
+  else
+    return;
+}
+
+function buttonRed(){
+
+ for (let i = 0; i < allButtons.length; i++) {
+   allButtons[i].classList.replace(allButtons[i].classList[1],'btn-danger')
+ }
+
+}
+
+function buttonGreen(){
+
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].classList.replace(allButtons[i].classList[1],'btn-success')
+  }
+ 
+ }
+
+ function buttonColorReset(){
+
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].classList.replace(allButtons[i].classList[1],copyAllButtons[i]);
+  }
+ 
+ }
+
+ function randomColor(){
+
+  for (let i = 0; i < allButtons.length; i++) {
+    let randomNum = Math.floor(Math.random() * copyAllButtons.length);
+    allButtons[i].classList.replace(allButtons[i].classList[1],copyAllButtons[randomNum]);
+  }
+ 
+ }
